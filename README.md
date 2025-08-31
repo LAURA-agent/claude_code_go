@@ -1,6 +1,6 @@
 # GPi Case 2 AI Assistant - Claude Code Game Boy
 
-Transform a retro gaming handheld into a distributed AI assistant node powered by Claude.
+Take Claude with you on the go in a retro gaming handheld.  An MCP client endpoint in a distributed AI assistant node powered by Claude.
 
 ![GPi Case 2](https://img.shields.io/badge/Hardware-GPi%20Case%202-blue)
 ![Raspberry Pi](https://img.shields.io/badge/Platform-Raspberry%20Pi%20CM4-red)
@@ -11,9 +11,13 @@ Transform a retro gaming handheld into a distributed AI assistant node powered b
 
 This project transforms a GPi Case 2 (Game Boy-style handheld) into a node in a distributed AI assistant network. The device runs Claude Code locally, connects to a larger LAURA network via MCP (Model Context Protocol), and provides voice interaction without built-in microphone hardware.
 
+
+https://github.com/user-attachments/assets/c6f690f7-d5ea-45f3-80b4-67fb301ea9db
+
+
 ### Key Features
 
-- **Voice Control**: Wake word detection with 6+ trigger phrases
+- **Voice Control**: Wake word detection with 6+ trigger phrases (when docked)
 - **No Microphone Solution**: Apple Watch integration for voice input via HTTP
 - **Pokéball Mouse**: Reverse-engineered Nintendo Pokéball Plus as Bluetooth mouse
 - **Game Controller Keyboard**: D-pad and buttons mapped to keyboard inputs
