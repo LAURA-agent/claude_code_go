@@ -1,0 +1,46 @@
+# CRITICAL GPi Case 2 Boot Configuration
+# This MUST be added to /boot/firmware/config.txt for display to work!
+# WITHOUT THESE SETTINGS YOU WILL GET A BLACK SCREEN
+
+# ==========================================
+# MOST IMPORTANT - DISABLE MODERN KMS DRIVER
+# ==========================================
+# THIS LINE MUST BE COMMENTED OUT OR DELETED:
+#dtoverlay=vc4-kms-v3d
+
+# If this line is active, the display WILL NOT WORK
+# The GPi Case 2 is incompatible with the modern KMS driver
+# It requires the legacy framebuffer driver (bcm2708_fb)
+
+# ==========================================
+# GPi Case 2 Display Configuration (DPI24)
+# ==========================================
+dtoverlay=dpi24
+framebuffer_width=640
+framebuffer_height=480
+enable_dpi_lcd=1
+display_default_lcd=1
+dpi_group=2
+dpi_mode=87
+dpi_output_format=0x00016  # RGB888 (8 bits per color) - REQUIRED!
+hdmi_timings=640 0 41 40 41 480 0 18 9 18 0 0 0 60 0 24000000 1
+
+# ==========================================
+# Disable HDMI Completely (Prevent Docking Issues)
+# ==========================================
+hdmi_blanking=2
+hdmi_ignore_hotplug=1
+display_auto_detect=0
+
+# ==========================================
+# EXPLANATION OF WHY THIS WORKS
+# ==========================================
+# The GPi Case 2 uses a Display Parallel Interface (DPI) that sends
+# raw RGB data directly to the LCD controller. This is fundamentally
+# different from HDMI or DSI displays. The modern vc4-kms-v3d driver
+# expects to negotiate with displays using EDID, which the GPi LCD
+# doesn't support. The legacy framebuffer driver simply dumps pixels
+# directly to the DPI pins, which is exactly what this hardware needs.
+#
+# Discovery process: Days of debugging, trying every possible driver
+# combination until finding that commenting out vc4-kms-v3d was the key.

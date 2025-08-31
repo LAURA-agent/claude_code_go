@@ -1,0 +1,19 @@
+{
+  "active_voice": "uY96J30mUhYUIymmD5cu",
+  "voices": {
+    "qEwI395unGwWV1dn3Y65": {
+      "voice_id": "qEwI395unGwWV1dn3Y65",
+      "name": "Laura",
+      "model": "eleven_flash_v2_5",
+      "display_name": "Laura",
+      "description": "A woman in her thirties, young, courteous, confident, gentle, bubbly, friendly"
+    },
+    "uY96J30mUhYUIymmD5cu": {
+      "voice_id": "uY96J30mUhYUIymmD5cu",
+      "name": "Claude",
+      "model": "eleven_flash_v2_5",
+      "display_name": "Claude Code",
+      "description": "A warm British male voice with a distinctive South London accent. Measured speech with slight raspiness. Speaks with a natural rhythm, clear diction, and subtle authority. Occasionally drops consonants. Thoughtful pauses between phrases."
+    }
+  }
+}
